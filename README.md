@@ -7,7 +7,7 @@ Video: [aqui](https://drive.google.com/file/d/1hrrGeQ_8MRJbHJ9lJHTbZykEeywNUFNW/
 
 Base de datos utilizada: [aqui](https://github.com/fernando5324/lbaltazarDev-InvoiceRecorderChalleng/blob/54b2973959dd744532ab531cab915f1c23e0753f/BD.sql)
 
-### Función 1:
+### Función 1: Registro de serie, número, tipo del comprobante y moneda
 Utilice el endpoint ya existente y agregue los campos serie, número, tipo de comprobante y moneda. También cree un nuevo endpoint para actualizar los registros ya guardados con los del campo xml_content.
 Tenía pensado hacerlo cada vez que se guarda, pero teniendo en cuenta que no sería muy recurrente agregar nuevos campos a la tabla decidí hacerlo aparte.
 
@@ -27,7 +27,7 @@ Tenía pensado hacerlo cada vez que se guarda, pero teniendo en cuenta que no se
 	Función: Guardar comprobantes por multiples archivos .xml
 
 
-### Función 2:
+### Función 2: Carga de comprobantes en segundo plano
 Ahora se guarda en segundo plano los comprobantes y a la vez también el correo, hay varias validaciones por hacer pero en este caso solo agregue solo una validación de comprobante repetido.
 Para esto el QUEUE_CONNECTION de .env debe estar en database y no en sync. Tambien se debe agregar un correo en .env para que le lleguen las notificaciones.
 
@@ -36,20 +36,20 @@ Para esto el QUEUE_CONNECTION de .env debe estar en database y no en sync. Tambi
     Form-data: Files
 	Función: Guardar comprobantes por multiples archivos .xml
 
-### Función 3:
+### Función 3: Endpoint de montos totales
 Suma total de los comprobantes con el tipo de monera de PEN y USD por separado para mostrarlo. Para esto hay un archivo en la carpeta example_files del proyecto donde contiene el tipo de moneda en usd.
 
 	Ruta: api/v1/vouchers/total_mont
 	Metodo: GET
 
-### Función 4:
+### Función 4: Eliminación de comprobantes
 Note que agregar la configuración que por cada consulta revise si hay el campo deleted_at es null para no mostrarlo. Lo que hice fue que al eliminar solo se agrega la fecha actual a ese campo y por defecto no se mostraría en ninguna consulta.
 
 	Ruta: /api/v1/vouchers/delete
 	Metodo: DELETE
 	Parametros: id
 
-### Función 5:
+### Función 5: Filtro en listado de comprobantes
 nuevo endpoint con los filtros serie, número y por un rango de fechas. Hice que el rango de fechas sea opcional en caso solo se quiera revisar por serie y número que si son requeridos para su uso.
 
 	Ruta: /api/v1/vouchers/search
