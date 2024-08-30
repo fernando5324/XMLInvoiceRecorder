@@ -1,7 +1,6 @@
-# Invoice Recorder Challenge - Baltazar Valenzuela
+# XML Invoice Recorder
 
-Esta es mi resolución del repositorio 
-https://github.com/anthony-rosado/invoice-recorder-challenge-sample#invoice-recorder-challenge-sample-v10-es
+Ejercicio de APIS para gestionar la información de facturas con archivos XML
 
 
 Base de datos utilizada: [aqui](https://github.com/fernando5324/lbaltazarDev-InvoiceRecorderChalleng/blob/54b2973959dd744532ab531cab915f1c23e0753f/BD.sql)
@@ -56,6 +55,7 @@ nuevo endpoint con los filtros serie, número y por un rango de fechas. Hice que
 	Parametros: serie , number , initial_date , end_date
 
 ### Comentarios finales:
+Me tomo más tiempo entender el proyecto y el uso de la autentificación por JWT, ya que era necesario iniciar sesión primero para poder hacer las consultas.
 Me tomo más tiempo entender el proyecto y el uso de la autentificación por JWT, ya que era necesario iniciar sesión primero para poder hacer las consultas.
 
 
