@@ -1,4 +1,4 @@
-# XML Invoice Recorder
+# Registrador de facturas XML 
 
 Ejercicio de APIS para gestionar la información de facturas con archivos XML
 
